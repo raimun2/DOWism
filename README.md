@@ -1,6 +1,6 @@
 # Fridayism (A DOWism Prototype) 📅
 
-The standard calendar interface enforces a Monday or Sunday start. This is a systemic bias—a leftover of industrial-era productivity metrics designed to standardise human output. It ignores a fundamental, albeit entirely arbitrary, reality: your week actually begins on the day of the week you were born.
+The standard calendar enforces a Monday (or Sunday) week start. This is a systemic bias—a leftover of industrial-era productivity metrics designed to standardise human output. It ignores a fundamental, albeit entirely arbitrary, reality: your week actually begins on the day (of the week) you were born. I was born on a Friday, so every week in my life has started on Fridays, yet no tools embrace this diversity.
 
 **DOWism** (Day-of-Week-ism) is the universal framework to correct this. **Fridayism** is my special case of it. 
 
