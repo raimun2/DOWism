@@ -1,21 +1,38 @@
-function applyViernistaOrder() {
-    const headers = document.querySelectorAll('[role="columnheader"]');
-    if(headers.length >= 7) {
-        headers.forEach(header => {
-            const text = header.textContent.toLowerCase();
-            if (text.includes('fri') || text.includes('vie')) header.style.order = 1;
-            else if (text.includes('sat') || text.includes('s�b')) header.style.order = 2;
-            else if (text.includes('sun') || text.includes('dom')) header.style.order = 3;
-            else if (text.includes('mon') || text.includes('lun')) header.style.order = 4;
-            else if (text.includes('tue') || text.includes('mar')) header.style.order = 5;
-            else if (text.includes('wed') || text.includes('mi�')) header.style.order = 6;
-            else if (text.includes('thu') || text.includes('jue')) header.style.order = 7;
+// content.js
+// Intercepta la carga del calendario y redirige a la vista personalizada de 7 días, 
+// forzando siempre el inicio en el viernes más reciente.
 
-            if (header.parentElement) {
-                header.parentElement.style.display = 'flex';
-                header.parentElement.style.width = '100%';
-            }
-        });
+function getRecentFriday() {
+    const today = new Date();
+    const dayOfWeek = today.getDay(); // 0 (Dom) a 6 (Sab)
+    
+    // Calcula cuántos días hay que restar para llegar al viernes más cercano en el pasado (o 0 si es viernes)
+    const daysToSubtract = (dayOfWeek + 2) % 7; 
+    
+    const friday = new Date(today);
+    friday.setDate(today.getDate() - daysToSubtract);
+    
+    return friday;
+}
+
+function enforceDowism() {
+    const currentUrl = window.location.href;
+    
+    // Evita bucles infinitos: solo redirige si estamos en la vista de mes, semana o la vista principal por defecto.
+    // Si ya estamos en un "customday", dejamos que el usuario navegue tranquilo.
+    if (currentUrl.endsWith('calendar/u/0/r') || currentUrl.includes('/r/week') || currentUrl.includes('/r/month')) {
+        
+        const friday = getRecentFriday();
+        const yyyy = friday.getFullYear();
+        const mm = String(friday.getMonth() + 1);
+        const dd = String(friday.getDate());
+        
+        // Construye la URL nativa de Google para la vista personalizada comenzando en ese viernes
+        const viernistaUrl = `https://calendar.google.com/calendar/u/0/r/customday/${yyyy}/${mm}/${dd}`;
+        
+        window.location.replace(viernistaUrl);
     }
 }
-setInterval(applyViernistaOrder, 2000);
+
+// Ejecutar al cargar la página
+enforceDowism();

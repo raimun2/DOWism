@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Dowism",
+  "name": "Fridayism",
   "version": "1.0",
-  "description": "Reclaims the calendar from productivity culture. Weeks start on Friday.",
+  "description": "Reclaims the calendar from productivity culture. Weeks start on Friday for Fridayists.",
   "content_scripts": [
     {
       "matches": ["*://calendar.google.com/*"],
