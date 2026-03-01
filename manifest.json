@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Dowism",
+  "version": "1.0",
+  "description": "Reclaims the calendar from productivity culture. Weeks start on Friday.",
+  "content_scripts": [
+    {
+      "matches": ["*://calendar.google.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
