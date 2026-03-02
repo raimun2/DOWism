@@ -1,4 +1,4 @@
-# Viernism 📅
+# Viernism Manifesto 📅
 
 **We embrace the Friday.**
 
