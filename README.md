@@ -2,6 +2,8 @@
 
 **We embrace the Friday.**
 
+<audio src="viernism_manifesto.mp3" controls></audio>
+
 The standard calendar is industrial-era propaganda. It forces a Monday start to align your spirit with corporate productivity cycles. 
 
 Viernism is a way of life. It is the fundamental belief that your week should start on the best possible day: Friday. Whether you were born on a Friday (the original Viernistas) or you simply choose to reclaim your time, this is for you. We don't care about your "native" calendar privileges. 
