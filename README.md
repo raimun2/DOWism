@@ -15,6 +15,8 @@ Native Google Calendar settings only allow for Saturday, Sunday, or Monday as th
 2. Scroll to **View options**.
 3. Under **Set custom view**, select **7 days**.
 
+![Viernism in action](viernism.png)
+
 ## Installation (Developer Mode)
 1. Clone this repo:  
    `git clone https://github.com/raimun2/viernism.git`
